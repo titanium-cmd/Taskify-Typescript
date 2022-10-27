@@ -7,5 +7,5 @@ const SingleTodo: React.FC = () => {
 		</div>
 	)
 }
-
+ 
 export default SingleTodo
