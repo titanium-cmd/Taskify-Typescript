@@ -1,9 +1,9 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+it('heading should exist', () => { 
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+  const heading = screen.getByText(/Taskify/i);
+  expect(heading).toBeInTheDocument();
+  expect(heading).toBeVisible();
+})
