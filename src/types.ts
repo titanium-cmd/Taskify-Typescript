@@ -15,10 +15,15 @@ export interface TodosInterface {
     setTodos: React.Dispatch<React.SetStateAction<TodoInterface[]>>;
 }
 
+export interface EditInterface { 
+    visible: boolean;
+    text: string;
+}
+
 export interface SingleTodoInterface {
     todo: TodoInterface;
     handleDelete: (id: number) => void;
-    handleEdit: (id: number) => void;
+    handleEditSave: (id: number, newTodoVal: string) => void;
     handleDone: (id: number) => void;
     key: number;    
 }

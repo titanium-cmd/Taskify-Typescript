@@ -1,6 +1,6 @@
-import { TodosInterface } from "../../types"
-import SingleTodo from "./SingleTodo"
-import './todosStyles.css'
+import { TodosInterface } from "../../types";
+import SingleTodo from "./SingleTodo";
+import './todosStyles.css';
 
 const TodoList: React.FC<TodosInterface> = ({ todos, setTodos }) => {
 	return (
@@ -12,13 +12,14 @@ const TodoList: React.FC<TodosInterface> = ({ todos, setTodos }) => {
 					handleDelete={(id) => {
 						const otherTodos = todos.filter((todo) => todo.id !== id);
 						setTodos([...otherTodos]);
-					}}
+					} }
 					handleDone={(id) => {
-						const otherTodos = todos.filter((todo) => todo.id !== id);
-						setTodos([...otherTodos, {...todo, isDone: true}]);
-					}}
-					handleEdit={(id) => { 
-
+						const myTodos = todos.map((todo) => todo.id === id ? { ...todo, isDone: !todo.isDone } : todo);
+						setTodos(myTodos);
+					} }
+					handleEditSave={(id, val) => {
+						const myTodos = todos.map((todo) => todo.id === id ? { ...todo, todo: val } : todo);
+						setTodos(myTodos);
 					}}
 				/>
 			})}
