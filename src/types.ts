@@ -14,3 +14,11 @@ export interface TodosInterface {
     todos: TodoInterface[];
     setTodos: React.Dispatch<React.SetStateAction<TodoInterface[]>>;
 }
+
+export interface SingleTodoInterface {
+    todo: TodoInterface;
+    handleDelete: (id: number) => void;
+    handleEdit: (id: number) => void;
+    handleDone: (id: number) => void;
+    key: number;    
+}

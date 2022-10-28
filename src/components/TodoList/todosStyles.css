@@ -1,0 +1,48 @@
+.todos {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    flex-wrap: wrap;
+}
+
+.todo__single {
+    display: flex;
+    width: 29%;
+    color: whitesmoke;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 15px;
+    background-color: darkslategrey;
+}
+
+.todo__text{
+    flex: 1;
+    padding: 5px;
+    border: none;
+    font-size: 20px;
+}
+
+.todo__text:focus{
+    outline: none;
+}
+
+.icon {
+    margin-left: 10px;
+    font-size: 15 px;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .todos{
+        width: 95%;
+    }
+    .todo__single{
+        width: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .todo__single{
+        width: 40%;
+    }
+}
